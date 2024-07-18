@@ -58,6 +58,14 @@ public abstract class Pessoa implements Serializable{
 		addPerfil(Perfil.CLIENTE);
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public Integer getId() {
 		return id;
 	}
