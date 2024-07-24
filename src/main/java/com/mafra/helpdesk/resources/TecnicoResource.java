@@ -12,7 +12,7 @@ import com.mafra.helpdesk.dtos.TecnicoDTO;
 import com.mafra.helpdesk.services.TecnicoService;
 
 @RestController
-@RequestMapping(value = "tecnicos")
+@RequestMapping(value = "/tecnicos")
 public class TecnicoResource {
 	
 	@Autowired
