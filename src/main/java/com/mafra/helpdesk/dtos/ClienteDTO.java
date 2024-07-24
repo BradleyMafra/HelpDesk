@@ -1,18 +1,18 @@
 package com.mafra.helpdesk.dtos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.mafra.helpdesk.domain.Cliente;
+import com.mafra.helpdesk.domain.enums.Perfil;
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.mafra.helpdesk.domain.Tecnico;
-import com.mafra.helpdesk.domain.enums.Perfil;
-import jakarta.validation.constraints.NotNull;
-
-public class TecnicoDTO {
+public class ClienteDTO {
 	private static final long serialVersionUID =1L;
-	
+
 	protected Integer id;
 	@NotNull(message = "O campo NOME é requerido")
 	protected String nome;
@@ -22,18 +22,18 @@ public class TecnicoDTO {
 	protected String email;
 	@NotNull(message = "O campo SENHA é requerido")
 	protected String senha;
-	
+
 	protected Set<Integer> perfis = new HashSet<>();
-	
+
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
 
-	public TecnicoDTO() {
+	public ClienteDTO() {
 		super();
 		addPerfil(Perfil.CLIENTE);
 	}
 
-	public TecnicoDTO(Tecnico obj) {
+	public ClienteDTO(Cliente obj) {
 		super();
 		this.id = obj.getId();
 		this.nome = obj.getNome();
