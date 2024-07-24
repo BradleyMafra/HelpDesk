@@ -1,7 +1,7 @@
 package com.mafra.helpdesk.services;
 
 import java.util.Optional;
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +19,10 @@ public class TecnicoService {
 	public Tecnico findById(Integer id) {
 		Optional<Tecnico> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectnotFoundException ("Objeto nao encontrado! Id: " + id));
+	}
+	
+	public List<Tecnico> findAll() {
+		return repository.findAll();
 	}
 	
 }
